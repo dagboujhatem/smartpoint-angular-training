@@ -1,0 +1,88 @@
+<h1 class="text-center text-primary my-5">Long-Form Structural Directives examples </h1>
+<h4 class="my-3">[ngIf] Structural Directives</h4>
+
+<!-- NgIf Syntactic Sugar with  * -->
+<!-- <p class="card-text" *ngIf="!hide">
+  {{ punchline }}
+</p> -->
+
+<ng-template [ngIf]="!hide">
+  <p class="card-text">
+    {{ punchline }}
+  </p>
+</ng-template>
+
+<h4 class="my-3">[ngFor] Structural Directives</h4>
+
+<!-- <div *ngFor="let data of jokes; index as i">
+  <div class="card card-block">
+    <h4 class="card-title">
+      {{ data.setup }}
+    </h4>
+    <ng-template [ngIf]="!data.hide">
+      <p class="card-text">
+      {{ data.punchline }}
+    </p>
+    </ng-template>
+    <button class="btn btn-primary"
+            (click)="toggle(i)">Tell Me
+    </button>
+  </div>
+</div> -->
+
+<!-- Link: https://angular.io/api/common/NgForOf -->
+<ng-template ngFor let-data [ngForOf]="jokes" let-i="index">
+  <div>
+    <div class="card card-block">
+      <h4 class="card-title">
+        {{ data.setup }}
+      </h4>
+      <ng-template [ngIf]="!data.hide">
+        <p class="card-text">
+          {{ data.punchline }}
+        </p>
+      </ng-template>
+      <button class="btn btn-primary" (click)="toggle(i)">
+        Tell Me
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<h4 class="my-3">[ngSwitch] Structural Directives</h4>
+
+<div class='card'>
+  <div class='card-header'>
+    Multiple ngSwitchCase with same condition
+  </div>
+  <!--  Syntactic Sugar form -->
+  <!-- <div class="card-body">
+    <select [(ngModel)]="selectedValue1">
+      <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>
+    </select>
+    <div [ngSwitch]="selectedValue1">
+      <p *ngSwitchCase="'One'">One is Selected</p>
+      <p *ngSwitchCase="'Two'">Two is Selected</p>
+      <p *ngSwitchCase="'Three'">Three is Selected</p>
+      <p *ngSwitchCase="'Four'">Four is Selected</p>
+      <p *ngSwitchCase="'Five'">Five is Selected</p>
+      <p *ngSwitchDefault>This is Default Option</p>
+    </div>
+  </div> -->
+  <!-- end Syntactic Sugar form -->
+  <!-- long form -->
+  <div class="card-body">
+    <select [(ngModel)]="selectedValue1">
+      <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>
+    </select>
+    <div [ngSwitch]="selectedValue1">
+      <ng-template [ngSwitchCase]="'One'">One is Selected</ng-template>
+      <ng-template [ngSwitchCase]="'Two'">Two is Selected</ng-template>
+      <ng-template [ngSwitchCase]="'Three'">Three is Selected</ng-template>
+      <ng-template [ngSwitchCase]="'Four'">Four is Selected</ng-template>
+      <ng-template [ngSwitchCase]="'Five'">Five is Selected</ng-template>
+      <ng-template ngSwitchDefault>This is Default Option</ng-template>
+    </div>
+  </div>
+  <!-- end long form -->
+</div>
