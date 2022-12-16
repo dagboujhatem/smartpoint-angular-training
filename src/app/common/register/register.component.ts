@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   public email?: string = '';
   public password?: string = '';
   public confirmPassword?: string = '';
-  public termAccepted = false;
+  public termAccepted?: any;
   public submitted = false;
 
   constructor() { }

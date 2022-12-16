@@ -44,15 +44,16 @@
         </div>
       </div>
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="check" [(ngModel)]="termAccepted"
-          #acceptTermControl="ngModel" required
-          [ngClass]="{ 'is-invalid': submitted && acceptTermControl.invalid, 'is-valid': submitted && acceptTermControl.valid }">
         <label class="form-check-label" for="check">
           Accept <a routerLink="/term-and-condition">term and conditions</a>.
         </label>
+        <input type="checkbox" class="form-check-input" id="check" [(ngModel)]="termAccepted"
+          #acceptTermControl="ngModel" requiredTrue
+          [ngClass]="{ 'is-invalid': submitted && acceptTermControl.invalid, 'is-valid': submitted && acceptTermControl.valid }">
         <div class="d-block invalid-feedback">
           <div *ngIf="submitted && acceptTermControl.hasError('required')">Please accept the terms & conditions.</div>
         </div>
+        {{acceptTermControl.errors |json}}
       </div>
       <div class="d-grid gap-2">
         <!-- <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Sign up</button> -->
