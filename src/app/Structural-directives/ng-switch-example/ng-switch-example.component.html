@@ -1,0 +1,38 @@
+<h1 class="text-center text-primary my-5">Ng-Switch example </h1>
+
+<!-- bad way -->
+<h4>Bad way: Work with ng-if with multi case</h4>
+
+<ul *ngFor="let person of people">
+  <li *ngIf="person.country ==='UK'"
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country === 'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngIf="person.country !== 'HK' && person.country !== 'UK' && person.country !== 'USA'"
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+<!-- best way -->
+<h4>Best way: using the NgSwitch directive</h4>
+<ul *ngFor="let person of people"
+    [ngSwitch]="person.country">
+
+  <li *ngSwitchCase="'UK'"
+      class="text-success">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'USA'"
+      class="text-primary">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchCase="'HK'"
+      class="text-danger">{{ person.name }} ({{ person.country }})
+  </li>
+  <li *ngSwitchDefault
+      class="text-warning">{{ person.name }} ({{ person.country }})
+  </li>
+</ul>

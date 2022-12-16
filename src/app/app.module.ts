@@ -13,6 +13,9 @@ import { LoginComponent } from './common/login/login.component';
 import { RegisterComponent } from './common/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordPatternDirective } from './common/directives/password-pattern.directive';
+import { NgForExampleComponent } from './Structural-directives/ng-for-example/ng-for-example.component';
+import { NgIfExampleComponent } from './Structural-directives/ng-if-example/ng-if-example.component';
+import { NgSwitchExampleComponent } from './Structural-directives/ng-switch-example/ng-switch-example.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { PasswordPatternDirective } from './common/directives/password-pattern.d
     Page500Component,
     LoginComponent,
     RegisterComponent,
-    PasswordPatternDirective
+    PasswordPatternDirective,
+    NgForExampleComponent,
+    NgIfExampleComponent,
+    NgSwitchExampleComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'page-400', component: Page400Component },
   { path: 'page-500', component: Page500Component },
+  { path: 'structural-directive', loadChildren: () => import('./Structural-directives/structural-directive.module').then(m => m.StructuralDirectiveModule) },
+  { path: 'attribute-directive', loadChildren: () => import('./attribute-directive/attribute-directive.module').then(m => m.AttributeDirectiveModule) },
+  { path: 'custom-directive', loadChildren: () => import('./custom-directive/custom-directive.module').then(m => m.CustomDirectiveModule) },
   { path: '**', redirectTo: 'page-400', pathMatch: 'full' }
 ];
 

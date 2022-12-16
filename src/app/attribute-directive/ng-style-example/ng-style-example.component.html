@@ -1,0 +1,47 @@
+<h1 class="text-*center text-primary my-5">
+  Ng-Style example 1: simple format
+</h1>
+<H4>ng-Style example</H4>
+<div class="mb-3" [ngStyle]="redStyle"> Exemple Red with ngStyle</div>
+<div class="mb-3" [ngStyle]="{'background-color':'green'}"> Exemple Green with ngStyle</div>
+<div class="mb-3" [ngStyle]="{'color': 'blue', 'font-size': '24px', 'font-weight': 'bold'}">
+  Some text here
+</div>
+
+
+<h1 class="text-*center text-primary my-5">
+  Ng-Style example 2: with  calling method
+</h1>
+<h4>NgStyle</h4>
+<ul *ngFor="let person of people">
+  <li [ngStyle]="{'color':getColor(person.country)}">
+    {{ person.name }} ({{ person.country }}) (1)
+  </li>
+</ul>
+
+
+<h1 class="text-*center text-primary my-5">
+  Ng-Style example 3: with Alternative Syntax
+</h1>
+<h4>NgStyle with Alternative Syntax</h4>
+<ul *ngFor="let person of people">
+  <li [style.color]="getColor(person.country)">
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+
+<h1 class="text-*center text-primary my-5">
+  Ng-Style example 4: Pixel value in NgStyle with Alternative Syntax
+</h1>
+<h4>Pixel value in NgStyle</h4>
+<ul *ngFor="let person of people">
+  <li  [ngStyle]="{'font-size.px':24}" [style.color]="getColor(person.country)">
+    {{ person.name }} ({{ person.country }})
+  </li>
+</ul>
+
+
+
+
+
