@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
 
     // reset form
     this.loginForm?.reset();
+    this.submitted =false;
   }
 
 }

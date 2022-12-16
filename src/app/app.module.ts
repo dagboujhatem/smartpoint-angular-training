@@ -12,6 +12,7 @@ import { Page500Component } from './common/page500/page500.component';
 import { LoginComponent } from './common/login/login.component';
 import { RegisterComponent } from './common/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PasswordPatternDirective } from './common/directives/password-pattern.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Page400Component,
     Page500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PasswordPatternDirective
   ],
   imports: [
     BrowserModule,

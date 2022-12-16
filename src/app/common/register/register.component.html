@@ -1,6 +1,6 @@
 <div class="row my-5">
   <div class="offset-md-3 col-md-6 my-5">
-    <form class="my-0" (ngSubmit)="onRegister()" #registerForm="ngForm">
+    <form class="my-0" (ngSubmit)="onRegister(registerForm)" #registerForm="ngForm"  [appPasswordPattern]="['passwordControl', 'passwordConfirmationControl']">
       <h1 class="text-primary text-center my-3">Sign up</h1>
       <div class="my-3">{{registerForm.value | json}}</div>
       <div class="mb-3">
@@ -35,13 +35,14 @@
       <div class="mb-3">
         <label for="passwordConfirmation" class="form-label">Confirm password</label>
         <input type="password" class="form-control" id="passwordConfirmation" name="confirmPassword" autocomplete="new-password"
-          placeholder="Confirm your password here" [(ngModel)]="confirmPassword" #passwordConfirmationControl="ngModel"
-          required
+          placeholder="Confirm your password here" [(ngModel)]="confirmPassword" #passwordConfirmationControl="ngModel" required minlength="6"
           [ngClass]="{ 'is-invalid': submitted && passwordConfirmationControl.invalid, 'is-valid': submitted && passwordConfirmationControl.valid }">
         <div class="d-block invalid-feedback">
-          <div *ngIf="submitted && passwordConfirmationControl.hasError('required')">Confirm Password is required.</div>
-          <div *ngIf="submitted && passwordConfirmationControl.hasError('matching')">Passwords must match.</div>
+          <div *ngIf="submitted && passwordConfirmationControl.hasError('required')">Password confirmation is required.</div>
+          <div *ngIf="submitted && passwordConfirmationControl.hasError('minlength')">Password confirmation must be at least 6 characters.</div>
+          <div *ngIf="submitted && passwordConfirmationControl.hasError('matching')">Password confirmation does not match.</div>
         </div>
+        {{passwordConfirmationControl.errors |json}}
       </div>
       <div class="mb-3 form-check">
         <label class="form-check-label" for="check">

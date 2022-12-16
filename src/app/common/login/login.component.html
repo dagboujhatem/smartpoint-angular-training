@@ -5,7 +5,7 @@
       <div class="mb-3">
         <label for="email" class="form-label">E-mail address</label>
         <input type="email" class="form-control" id="email" placeholder="Type your e-mail address here"
-          formControlName="email"
+          formControlName="email" autocomplete="email"
           [ngClass]="{ 'is-invalid': submitted && loginForm.get('email')?.invalid, 'is-valid': submitted && loginForm.get('email')?.valid }">
         <!-- <div class="d-block invalid-feedback" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">E-mail is required.</div>
         <div class="d-block invalid-feedback" *ngIf="loginForm.get('email')?.touched &&  loginForm.get('email')?.hasError('email')">E-mail must contain @ .</div> -->
@@ -17,7 +17,7 @@
       <div class="mb-3">
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Type your password here"
-          formControlName="password"
+          formControlName="password" autocomplete="current-password"
           [ngClass]="{ 'is-invalid': submitted && loginForm.get('password')?.invalid, 'is-valid': submitted && loginForm.get('password')?.valid }">
         <div class="d-block invalid-feedback" *ngIf="submitted && loginForm.get('password')?.hasError('required')">
           Password is required.</div>

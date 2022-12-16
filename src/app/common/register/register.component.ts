@@ -23,10 +23,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRegister(): void {
+  onRegister(form: any): void {
     // event.preventDefault();
     this.submitted = true;
-    if(this.fullName == '' && this.email == '' && this.password == '' && this.confirmPassword == ''){
+    if(form.invalid){
       return;
     }
 
@@ -44,5 +44,6 @@ export class RegisterComponent implements OnInit {
     this.email = '';
     this.password = '';
     this.confirmPassword = '';
+    this.submitted= false;
   }
 }
