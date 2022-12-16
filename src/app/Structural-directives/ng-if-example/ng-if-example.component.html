@@ -7,8 +7,33 @@
   </li>
 </ul>
 
-<!--  -->
+<!-- if & else : example 1-->
+<!-- <h4>NgIf ... elseif ... else: exemple 1</h4>
+<p *ngIf="isUserLoggedIn; else loggedOut">
+  You're connected as {{ userFullName }}.
+</p>
+<ng-template #loggedOut>
+  <p>You need to login.</p>
+</ng-template> -->
+
+<!-- if & else : example 2 -->
+<!-- <h4>NgIf ... elseif ... else: simple exemple 2</h4>
+
+<ng-container *ngIf="isUserLoggedIn; then loggedIn else loggedOut">
+</ng-container>
+
+<ng-template #loggedOut>
+  <p>You need to login.</p>
+</ng-template>
+<ng-template #loggedIn>
+  <p>You're connected as {{ userFullName }}.</p>
+</ng-template> -->
+
+<!-- ngIf/ elseif else bloc -->
+<h4>NgIf ... elseif ... else: simple exemple 3</h4>
+
+<!-- NOTE -->
 <div class="alert alert-danger">
-  <p>We can’t have two structural directives, directives starting with a *, attached to the same element.</p>
+  <p>NOTE : We can’t have two structural directives, directives starting with a *, attached to the same element.</p>
   Plase check<a href="https://codecraft.tv/courses/angular/built-in-directives/ngif-and-ngswitch/"> this link </a> for more infos.
 </div>

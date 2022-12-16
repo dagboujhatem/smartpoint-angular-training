@@ -28,6 +28,11 @@ export class NgIfExampleComponent implements OnInit {
       "age": 32
     }
   ];
+
+  // if / else block
+  isUserLoggedIn = false;
+  userFullName = 'Jhon Doe';
+
   constructor() { }
 
   ngOnInit(): void {

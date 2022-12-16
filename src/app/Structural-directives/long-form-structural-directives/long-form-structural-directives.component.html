@@ -12,6 +12,37 @@
   </p>
 </ng-template>
 
+<!-- ngIf ... else ...: long form ==> example 1 -->
+<h4>ngIf ... else ...: long form ==> example 1</h4>
+<ng-template [ngIf]="isLoggedIn" [ngIfElse]="loggedOut">
+  <div>
+    Welcome back, friend.
+  </div>
+</ng-template>
+
+<ng-template #loggedOut>
+  <div>
+    Please friend, login.
+  </div>
+</ng-template>
+
+<!-- ngIf ... else ...: long form ==> example 2  -->
+<h4>ngIf ... else ...: long form ==> example 2</h4>
+<ng-template [ngIf]="isLoggedIn" [ngIfThen]="loggedIn" [ngIfElse]="loggedOut"></ng-template>
+
+<ng-template #loggedIn>>
+  <div>
+    Welcome back, friend.
+  </div>
+</ng-template>
+
+<ng-template #loggedOut>
+  <div>
+    Please friend, login.
+  </div>
+</ng-template>
+
+
 <h4 class="my-3">[ngFor] Structural Directives</h4>
 
 <!-- <div *ngFor="let data of jokes; index as i">
