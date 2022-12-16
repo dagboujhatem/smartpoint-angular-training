@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
     if(form.invalid){
       return;
     }
+    // console.log(`form data : ${JSON.stringify(form.value)}`)
 
     // call rest API using service
     const data = {
