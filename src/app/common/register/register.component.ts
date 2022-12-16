@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
+  // Tutorial Link 1 : https://jasonwatmore.com/post/2018/11/10/angular-7-template-driven-forms-validation-example
+  // Tutorial Link 2 : https://timdeschryver.dev/blog/a-practical-guide-to-angular-template-driven-forms#custom-validators
+
   public fullName?: string = '';
   public email?: string = '';
   public password?: string = '';
   public confirmPassword?: string = '';
+  public termAccepted = false;
+  public submitted = false;
 
   constructor() { }
 
@@ -19,7 +24,7 @@ export class RegisterComponent implements OnInit {
 
   onRegister(): void {
     // event.preventDefault();
-
+    this.submitted = true;
     if(this.fullName == '' && this.email == '' && this.password == '' && this.confirmPassword == ''){
       return;
     }
