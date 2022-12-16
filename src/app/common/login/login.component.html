@@ -28,7 +28,7 @@
         <label class="form-check-label" for="check">Remember me</label>
         <input type="checkbox" class="form-check-input" id="check" formControlName="rememberMe"
         [ngClass]="{ 'is-invalid': submitted && loginForm.get('rememberMe')?.invalid, 'is-valid': submitted && loginForm.get('rememberMe')?.valid }">
-        <div class="d-block invalid-feedback" *ngIf="submitted && loginForm.get('rememberMe')?.hasError('requiredtrue')">
+        <div class="d-block invalid-feedback" *ngIf="submitted && loginForm.get('rememberMe')?.hasError('required')">
           You must accept this option.
         </div>
       </div>
