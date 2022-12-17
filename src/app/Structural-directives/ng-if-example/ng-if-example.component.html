@@ -1,4 +1,4 @@
-<h1 class="text-center text-primary my-5">Ng-if example </h1>
+<h1 class="text-center text-primary my-5">Ng-if example 1</h1>
 
 <h4>NgIf simple exemple</h4>
 <ul *ngFor="let person of people">
@@ -8,16 +8,16 @@
 </ul>
 
 <!-- if & else : example 1-->
-<!-- <h4>NgIf ... elseif ... else: exemple 1</h4>
+<h4>NgIf ... elseif ... else: exemple 2</h4>
 <p *ngIf="isUserLoggedIn; else loggedOut">
   You're connected as {{ userFullName }}.
 </p>
 <ng-template #loggedOut>
   <p>You need to login.</p>
-</ng-template> -->
+</ng-template>
 
 <!-- if & else : example 2 -->
-<!-- <h4>NgIf ... elseif ... else: simple exemple 2</h4>
+<h4>NgIf ... elseif ... else: simple exemple 3</h4>
 
 <ng-container *ngIf="isUserLoggedIn; then loggedIn else loggedOut">
 </ng-container>
@@ -27,10 +27,8 @@
 </ng-template>
 <ng-template #loggedIn>
   <p>You're connected as {{ userFullName }}.</p>
-</ng-template> -->
+</ng-template>
 
-<!-- ngIf/ elseif else bloc -->
-<h4>NgIf ... elseif ... else: simple exemple 3</h4>
 
 <!-- NOTE -->
 <div class="alert alert-danger">

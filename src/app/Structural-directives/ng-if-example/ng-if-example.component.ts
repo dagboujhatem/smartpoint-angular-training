@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ng-if-example.component.scss']
 })
 export class NgIfExampleComponent implements OnInit {
+  // Link: https://ultimatecourses.com/blog/angular-ngif-else-then
   people: any[] = [
     {
       "name": "Douglas  Pace",
