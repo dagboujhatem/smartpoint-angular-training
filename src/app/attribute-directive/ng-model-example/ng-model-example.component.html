@@ -1,22 +1,35 @@
 <h1 class="text-*center text-primary my-5">Ng-Model example 1: simple format</h1>
 <p>Ng-Model example </p>
-<input type="text" class="form-control mb-3" name="value" [(ngModel)]="value">
-<p>{{ 'Typed text: ' + value}}</p>
+<form>
+  <input type="text" class="form-control mb-3" [(ngModel)]="value">
+  <p>{{ 'Typed text: ' + value}}</p>
+</form>
 <button class="btn btn-primary my-3" (click)="sendValueToBackend()"> Send value</button>
-<div class="alert alert-danger">
-  <h4 class="alert-heading">NOTE:</h4>
-  <p>Dans ce cas, si vous utilisez le [(ngModel)]="value", il faut ajouter l'attribut name à l'input ayant le même
-    valeur que ngModel.</p>
-  <hr>
-  <pre>
-      Exemple:
-      <!-- <input type="text" class="form-control mb-3" name="value" [(ngModel)]="value"> -->
-      &lt;input type="text" class="form-control mb-3" name="value" [(ngModel)]="value" &gt;
-    </pre>
-</div>
 
 <h1 class="text-*center text-primary my-5">Ng-Model example 2: full format</h1>
 <p>Ng-Model example </p>
 <input type="text" class="form-control mb-3" [ngModel]="name" (ngModelChange)="receiveNameChange($event)">
 <p>{{ 'Typed text: ' + name}}</p>
 <button class="btn btn-primary my-3" (click)="showName()"> Send name</button>
+
+<div class="alert alert-danger">
+  <h4 class="alert-heading">NOTE:</h4>
+  <p>Si vous utilisez le [(ngModel)]="value" à l'intérieur d'une balise de formulaire &lt;form &gt; .... &lt; /form &gt;
+    alors une erreur sera affiché dans le console comme suit :
+  </p>
+  <hr>
+  <img src="assets/ngModelError.png" alt="error" class="img-fluid">
+  <h5 class="my-1">Solution 1:</h5>
+  <pre>
+      il faut ajouter l'attribut name à l'input ayant le même valeur que ngModel.
+      <!-- <input type="text" class="form-control mb-3" name="value" [(ngModel)]="value"> -->
+      &lt;input type="text" class="form-control mb-3" name="value" [(ngModel)]="value" &gt;
+    </pre>
+  <h5 class="my-1">Solution 2:</h5>
+  <div ngNonBindable>
+    il faut ajouter la directive  [ngModelOptions]="&#x2774; standalone: true &#125;" .
+    <pre>
+      &lt;input type="text" class="form-control mb-3" [ngModelOptions]="&#x2774; standalone: true &#125;" [(ngModel)]="value" &gt;
+    </pre>
+  </div>
+</div>
