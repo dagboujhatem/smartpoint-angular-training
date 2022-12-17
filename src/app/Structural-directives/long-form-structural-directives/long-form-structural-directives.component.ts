@@ -23,6 +23,70 @@ export class LongFormStructuralDirectivesComponent implements OnInit {
     this.jokes[i].hide = !this.jokes[i].hide;
   }
 
+  // ngFor with tracked by option
+  // Link: https://nicolasfazio.ch/programmation/angular/speed-ngfor-fonction-trackby
+  // Vidéo demo: https://www.youtube.com/watch?v=wUq7yQVjmFw
+
+  peoples: any[] = [
+    {
+      id: 0,
+      name: "Douglas  Pace"
+    },
+    {
+      id: 1,
+      name: "Mcleod  Mueller"
+    },
+    {
+      id: 2,
+      name: "Day  Meyers"
+    },
+    {
+      id: 3,
+      name: "Aguirre  Ellis"
+    },
+    {
+      id: 4,
+      name: "Cook  Tyson"
+    }
+  ];
+
+  refresh(){
+    this.peoples = [
+      {
+        id: 0,
+        name: "Douglas  Pace"
+      },
+      {
+        id: 1,
+        name: "Mcleod  Mueller"
+      },
+      {
+        id: 2,
+        name: "Day  Meyers"
+      },
+      {
+        id: 3,
+        name: "Aguirre  Ellis"
+      },
+      {
+        id: 4,
+        name: "Jhon  Doe"
+      },
+      {
+        id: 5,
+        name: "Cook  Tyson"
+      },
+      {
+        id: 6,
+        name: "Jhon  Doe"
+      }
+    ];
+  }
+
+  trackByFn(index: number, item: any) {
+    return index; // or item.id
+  }
+
   // ngSwitch example
   // Link : https://angular.io/api/common/NgSwitch
   // Link : https://www.tektutorialshub.com/angular/angular-ngswitch-directive/#important-points

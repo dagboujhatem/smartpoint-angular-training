@@ -80,6 +80,18 @@
   </div>
 </ng-template>
 
+<!-- example 3 -->
+<h1 class="text-*center text-primary my-5">[ngFor] with tracked by option</h1>
+<ul>
+  <ng-template ngFor let-person [ngForOf]="peoples" let-i="index" [ngForTrackBy]="trackByFn">
+    <li>
+      {{ i + 1 }} - {{ person.name }}
+    </li>
+  </ng-template>
+</ul>
+
+<button class="btn btn-primary my-3" (click)="refresh()">Refresh</button>
+
 <h4 class="my-3">[ngSwitch] Structural Directives</h4>
 
 <div class='card'>

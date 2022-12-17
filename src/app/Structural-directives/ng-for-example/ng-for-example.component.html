@@ -1,11 +1,12 @@
+<!-- example 1 -->
 <h1 class="text-*center text-primary my-5">Ng-for example 1: simple format</h1>
 <ul>
-  <li *ngFor="let person of people; let i = index">
+  <li *ngFor="let person of peoples; let i = index">
     {{ i + 1 }} - {{ person.name }}
   </li>
 </ul>
+<!-- example 2 -->
 <h1 class="text-*center text-primary my-5">Ng-for example 2: Ng for with Grouping</h1>
-
 <h4>NgFor (grouped)</h4>
 <ul *ngFor="let group of peopleByCountry">
   <li>{{ group.country }}</li>
@@ -15,3 +16,13 @@
     </li>
   </ul>
 </ul>
+
+<!-- example 3 -->
+<h1 class="text-*center text-primary my-5">Ng-for example 3: with tracked by option</h1>
+<ul>
+  <li *ngFor="let person of peoples; let i = index; trackBy: trackByFn">
+    {{ i + 1 }} - {{ person.name }}
+  </li>
+</ul>
+
+<button class="btn btn-primary my-3" (click)="refresh()">Refresh</button>
