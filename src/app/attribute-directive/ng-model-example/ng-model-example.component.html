@@ -1,7 +1,7 @@
 <h1 class="text-*center text-primary my-5">Ng-Model example 1: simple format</h1>
 <p>Ng-Model example </p>
 <form>
-  <input type="text" class="form-control mb-3" [(ngModel)]="value">
+  <input type="text" class="form-control mb-3" name="value" [(ngModel)]="value">
   <p>{{ 'Typed text: ' + value}}</p>
 </form>
 <button class="btn btn-primary my-3" (click)="sendValueToBackend()"> Send value</button>
