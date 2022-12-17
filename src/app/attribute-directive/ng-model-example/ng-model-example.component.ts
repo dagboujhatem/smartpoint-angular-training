@@ -8,13 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class NgModelExampleComponent implements OnInit {
   // Link : https://www.tektutorialshub.com/angular/angular-data-binding/
   value?: string;
+  name?: string = 'Jhon Doe';
   constructor() { }
 
   ngOnInit(): void {
   }
 
   sendValueToBackend(){
-    alert(this.value)
+    alert(this.value);
+  }
+
+  receiveNameChange(typedName: string) {
+    this.name = typedName;
+  }
+
+  showName(){
+    alert(this.name);
   }
 
 }

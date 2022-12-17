@@ -32,6 +32,40 @@
 
 <!-- NOTE -->
 <div class="alert alert-danger">
-  <p>NOTE : We can’t have two structural directives, directives starting with a *, attached to the same element.</p>
-  Plase check<a href="https://codecraft.tv/courses/angular/built-in-directives/ngif-and-ngswitch/"> this link </a> for more infos.
+  <h4 class="alert-heading">NOTE :</h4>
+  <p>We can’t have two structural directives, directives starting with a *, attached to the same element.</p>
+  <hr>
+  <div>
+    <b>Error: Example 1:</b>
+    <p ngNonBindable>
+      &lt;ul *ngFor="let person of people" *ngIf="person.age < 30" &gt; <br>
+        &lt; li &gt; {{ person.name }} &lt; /li &gt; <br>
+        &lt; /ul &gt; <br>
+    </p>
+    <b>Without Error: Example 2:</b>
+    <div ngNonBindable>
+      &lt; ul &gt; <br>
+      &lt; ng-template *ngFor="let person of people" [ngIf]="person.age < 30" &gt; <br>
+        &lt; li &gt; {{ person.name }} &lt; /li &gt; <br>
+        &lt; /ng-template &gt; <br>
+        &lt; /ul &gt; <br>
+    </div>
+    <b>Result 1: ngIf in the same div of *ngFor</b>
+    <ul>
+      <ng-template *ngFor="let person of people" [ngIf]="person.age < 30">
+        <li>{{ person.name }}</li>
+      </ng-template>
+    </ul>
+    <b>Result 2: nested ngIf (other solution)</b>
+    <ul *ngFor="let person of people">
+      <ng-template [ngIf]="person.age < 30">
+        <li>{{ person.name }}</li>
+      </ng-template>
+    </ul>
+  </div>
+  <hr>
+  <p>
+    Plase check<a href="https://codecraft.tv/courses/angular/built-in-directives/ngif-and-ngswitch/"> this link </a> for
+    more infos.
+  </p>
 </div>

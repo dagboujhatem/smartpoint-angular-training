@@ -1,5 +1,22 @@
-<h1 class="text-*center text-primary my-5">Ng-Model example: simple format</h1>
+<h1 class="text-*center text-primary my-5">Ng-Model example 1: simple format</h1>
 <p>Ng-Model example </p>
 <input type="text" class="form-control mb-3" name="value" [(ngModel)]="value">
 <p>{{ 'Typed text: ' + value}}</p>
 <button class="btn btn-primary my-3" (click)="sendValueToBackend()"> Send value</button>
+<div class="alert alert-danger">
+  <h4 class="alert-heading">NOTE:</h4>
+  <p>Dans ce cas, si vous utilisez le [(ngModel)]="value", il faut ajouter l'attribut name à l'input ayant le même
+    valeur que ngModel.</p>
+  <hr>
+  <pre>
+      Exemple:
+      <!-- <input type="text" class="form-control mb-3" name="value" [(ngModel)]="value"> -->
+      &lt;input type="text" class="form-control mb-3" name="value" [(ngModel)]="value" &gt;
+    </pre>
+</div>
+
+<h1 class="text-*center text-primary my-5">Ng-Model example 2: full format</h1>
+<p>Ng-Model example </p>
+<input type="text" class="form-control mb-3" [ngModel]="name" (ngModelChange)="receiveNameChange($event)">
+<p>{{ 'Typed text: ' + name}}</p>
+<button class="btn btn-primary my-3" (click)="showName()"> Send name</button>

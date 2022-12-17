@@ -10,10 +10,18 @@
 </div>
 
 <h1 class="my-5 text-center text-danger">Angular Others Directives </h1>
-<h1>NgNonBindable Directive</h1>
+<h4 class="alert-heading">NgNonBindable Directive</h4>
 <div class="alert alert-success">
   <p>We use ngNonBindable when we want tell Angular not to compile, or bind, a particular section of our page.</p>
+  <hr>
+  <div>
+    To render the name variable we use this syntax :
+    <p ngNonBindable>&lt;p ngNonBindable &gt; {{ name }} &lt; /p &gt;</p>
+  </div>
+  <hr>
+  <div>
+    Result : <p ngNonBindable>{{ name }}</p>
+  </div>
 </div>
 <div>
-  To render the name variable we use this syntax <pre ngNonBindable>{{ name }}</pre>
 </div>
