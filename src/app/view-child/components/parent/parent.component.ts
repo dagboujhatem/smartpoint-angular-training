@@ -38,7 +38,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
   // child commminication: change property
   changeChildProperty(){
     const child : any= this.child
-    child.userName = 'dd'
+    child.userName = 'Hatem DAGHBOUJ'
   }
 
   // child commminication: call a method
