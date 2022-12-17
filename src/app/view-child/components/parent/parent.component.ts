@@ -15,7 +15,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // console.log(this.par);
-    console.log(this.child);
+    // console.log(this.child);
   }
 
   ngAfterViewInit(): void {
@@ -31,7 +31,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
     // element.innerHTML = 'lorem ipsum .....'
 
     //
-    console.log(this.child);
+    // console.log(this.child);
 
   }
 
