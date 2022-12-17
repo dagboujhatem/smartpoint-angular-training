@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'structural-directive', loadChildren: () => import('./Structural-directives/structural-directive.module').then(m => m.StructuralDirectiveModule) },
   { path: 'attribute-directive', loadChildren: () => import('./attribute-directive/attribute-directive.module').then(m => m.AttributeDirectiveModule) },
   { path: 'custom-directive', loadChildren: () => import('./custom-directive/custom-directive.module').then(m => m.CustomDirectiveModule) },
+  { path: 'view-child', loadChildren: () => import('./view-child/view-child.module').then(m => m.ViewChildModule) },
   { path: '**', redirectTo: 'page-400', pathMatch: 'full' }
 ];
 

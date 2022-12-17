@@ -1,0 +1,9 @@
+<div class="my-5">
+  <!-- using template reference variable -->
+  <p #pargraphe>parent works!</p>
+  <!-- using child component -->
+  <button class="btn btn-primary" (click)="changeChildProperty()">Change child property</button>
+  <button class="btn btn-primary ms-2" (click)="callChildMethod()">Call child method</button>
+
+  <app-child></app-child>
+</div>
