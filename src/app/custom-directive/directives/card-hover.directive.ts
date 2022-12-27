@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from '@angular/core';
 
 // custom attribute derective
 // using cc as a namespace of this directive
@@ -7,6 +7,7 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
   selector: '[ccCardHover]'
 })
 export class CardHoverDirective {
+  @HostBinding('class.bg-primary') private isHovering : boolean = false;
 
   constructor(private el: ElementRef,
     private renderer: Renderer2) {
@@ -24,15 +25,25 @@ export class CardHoverDirective {
   onHover() {
     // mouse hover event
     // window.alert("hover");
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor','black');
-    this.renderer.setStyle(this.el.nativeElement,'color', 'red');
+    // this.renderer.setStyle(this.el.nativeElement, 'backgroundColor','black');
+    // this.renderer.setStyle(this.el.nativeElement,'color', 'red');
+
+    // change display of card text
+    const punchlineEl = this.el.nativeElement.querySelector('.card-text')
+    this.renderer.setStyle(punchlineEl,'display', 'block');
+    this.isHovering = true;
   }
 
   @HostListener('mouseout')
   onMouseOut() {
     // mouseout event
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor','white');
-    this.renderer.setStyle(this.el.nativeElement,'color', 'black');
+    // this.renderer.setStyle(this.el.nativeElement, 'backgroundColor','white');
+    // this.renderer.setStyle(this.el.nativeElement,'color', 'black');
+
+    // change display of card text
+    const punchlineEl = this.el.nativeElement.querySelector('.card-text')
+    this.renderer.setStyle(punchlineEl,'display', 'none');
+    this.isHovering = false;
   }
 
 
