@@ -1,6 +1,13 @@
 <div class="form-group mb-3">
-  <label [for]="Id">{{label}}</label>
-  <input type="text" [id]="Id" class="form-control" [placeholder]="placeholder"
-    formControlName="firstName" [autocomplete]="autocomplete"
-    [ngModel]="value" (ngModelChange)="onChange?.($event)" (blur)="onTouched?.()">
+  <label [for]="Id">{{ label }}</label>
+  <input
+    type="text"
+    [id]="Id"
+    class="form-control"
+    [placeholder]="placeholder"
+    [autocomplete]="autocomplete"
+    [ngModel]="value"
+    (ngModelChange)="onChange?.($event)"
+    (blur)="onTouched?.()"
+  />
 </div>
