@@ -3,16 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { CustomInputRoutingModule } from './custom-input-routing.module';
 import { CustomInputComponent } from './custom-input.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputComponent } from './input/input.component';
 
 
 @NgModule({
   declarations: [
-    CustomInputComponent
+    CustomInputComponent,
+    InputComponent
   ],
   imports: [
     CommonModule,
     CustomInputRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })

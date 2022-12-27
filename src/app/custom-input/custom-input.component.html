@@ -1,11 +1,46 @@
 <div class="form-container my-5">
   <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="create()">
     <h1 class="my-5 text-primary text-center">Create new user</h1>
-    <div class="form-group mb-3">
-      <label for="firstname">First name :</label>
-      <input type="text" id="firstname" class="form-control" placeholder="Type your first name here"
-        formControlName="firstName">
+    <form-input [id]="'firstName'" [label]="'First name :'" [placeholder]="'Type your first name here'"
+      [autocomplete]="'given-name'" formControlName="firstName">
+    </form-input>
+    <form-input [id]="'lastName'" [label]="'Last name :'" [placeholder]="'Type your last name here'"
+      [autocomplete]="'family-name'" formControlName="lastName">
+    </form-input>
+    <form-input [id]="'email'" [label]="'E-mail :'" [placeholder]="'Type your email here'"
+      [autocomplete]="'email'" formControlName="email">
+    </form-input>
+    <form-input [id]="'password'" [label]="'Password :'" [placeholder]="'Type your password here'"
+      [autocomplete]="'new-password'" formControlName="password">
+    </form-input>
+    <form-input [id]="'passwordConfirmation'" [label]="'Password confirmation :'" [placeholder]="'Type your password confirmation here'"
+      [autocomplete]="'new-password'" formControlName="passwordConfirmation">
+    </form-input>
+    <!-- <div class="form-group mb-3">
+      <label for="firstName">First name :</label>
+      <input type="text" id="firstName" class="form-control" placeholder="Type your first name here"
+        formControlName="firstName" autocomplete="given-name">
     </div>
+    <div class="form-group mb-3">
+      <label for="lastName">Last name :</label>
+      <input type="text" id="lastName" class="form-control" placeholder="Type your last name here"
+        formControlName="lastName" autocomplete="family-name">
+    </div>
+    <div class="form-group mb-3">
+      <label for="email">E-mail :</label>
+      <input type="email" id="email" class="form-control" placeholder="Type your email here"
+        formControlName="email" autocomplete="email">
+    </div>
+    <div class="form-group mb-3">
+      <label for="password">Password :</label>
+      <input type="password" id="password" class="form-control" placeholder="Type your password here"
+        formControlName="password" autocomplete="new-password">
+    </div>
+    <div class="form-group mb-3">
+      <label for="passwordConfirmation">Password Confirmation:</label>
+      <input type="password" id="passwordConfirmation" class="form-control" placeholder="Type your password confirmation here"
+        formControlName="passwordConfirmation" autocomplete="new-password">
+    </div> -->
     <div class="mb-3">
       <button type="reset" class="btn btn-secondary me-1">
         Cancel
@@ -14,6 +49,8 @@
         Create new user
       </button>
     </div>
-
+    <div>
+      {{ myForm.value | json }}
+    </div>
   </form>
 </div>

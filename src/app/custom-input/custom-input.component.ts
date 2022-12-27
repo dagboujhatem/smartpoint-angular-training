@@ -13,7 +13,7 @@ export class CustomInputComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      firstName : [''],
+      firstName : ['ddd'],
       lastName : [''],
       email : [''],
       password : [''],
