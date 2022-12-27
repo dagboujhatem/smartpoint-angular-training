@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'attribute-directive', loadChildren: () => import('./attribute-directive/attribute-directive.module').then(m => m.AttributeDirectiveModule) },
   { path: 'custom-directive', loadChildren: () => import('./custom-directive/custom-directive.module').then(m => m.CustomDirectiveModule) },
   { path: 'view-child', loadChildren: () => import('./view-child/view-child.module').then(m => m.ViewChildModule) },
+  { path: 'custom-input', loadChildren: () => import('./custom-input/custom-input.module').then(m => m.CustomInputModule) },
   { path: '**', redirectTo: 'page-400', pathMatch: 'full' }
 ];
 

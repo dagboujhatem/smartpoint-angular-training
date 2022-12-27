@@ -1,0 +1,19 @@
+<div class="form-container my-5">
+  <form *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="create()">
+    <h1 class="my-5 text-primary text-center">Create new user</h1>
+    <div class="form-group mb-3">
+      <label for="firstname">First name :</label>
+      <input type="text" id="firstname" class="form-control" placeholder="Type your first name here"
+        formControlName="firstName">
+    </div>
+    <div class="mb-3">
+      <button type="reset" class="btn btn-secondary me-1">
+        Cancel
+      </button>
+      <button type="submit" class="btn btn-success">
+        Create new user
+      </button>
+    </div>
+
+  </form>
+</div>
