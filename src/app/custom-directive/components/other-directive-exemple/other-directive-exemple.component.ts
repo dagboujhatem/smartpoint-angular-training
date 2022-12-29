@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherDirectiveExempleComponent implements OnInit {
 
+  title: string = "Custom Directives in Angular";
+  show = true;
   constructor() { }
 
   ngOnInit(): void {

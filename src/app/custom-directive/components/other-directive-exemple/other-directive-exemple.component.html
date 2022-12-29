@@ -1,1 +1,27 @@
-<p>other-directive-exemple works!</p>
+<!-- Custom Attribute Directive : like ngClass exemple -->
+<button class="btn" [appClass]="'btn-primary'">Submit</button>
+<!-- end ng class exemple -->
+
+<!-- Custom Structural Directive : like ngIf exemple  --> 
+<h1> {{title}} </h1>
+ 
+Show Me
+<input type="checkbox" [(ngModel)]="show">
+<div *appIf="show">
+  Using the ttIf directive
+</div>
+<div *ngIf="show">
+  Using the ngIf directive
+</div>
+<br>
+<!-- end ng if exemple  -->
+
+<!-- toggle directive -->
+<button class="btn btn-danger" appToggle>Click To Toggle</button>
+<br>
+<!-- end toggle directive -->
+
+<!-- tooltip directive -->
+<button class="btn btn-primary" appToolTip [toolTip]="'Tip of the day'">Show Tip</button>
+<br>
+<!-- end tooltip directive -->
